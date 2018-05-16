@@ -1,0 +1,20 @@
+<!-- Tin tức -->
+<div class="new-block box_cate width-common">
+  <h2 class="new-block-title">
+    <a href="topic?id={{topic.TopicUrl}}" title="">
+      <span>{{topic.TopicName}}</span>
+    </a>
+  </h2>
+
+  <div class="new-block-content" *ngFor="let article of articles">
+    <div class="block-3">
+      <a href="article?id={{article.ArticleUrl}}" title="#" class="thumb">
+        <img class="" src="resources/imgs/ArticleAvatar/{{article.ArticleId}}.jpg" style="width:150px;height:92px">
+      </a>
+      <h3>
+        <a href="article?id={{article.ArticleUrl}}" title="{{article.ArticleTitle}}">{{article.ArticleTitle}}</a>
+      </h3>
+      <p>{{article.ArticleDescription}}</p>
+    </div>
+  </div>
+</div>

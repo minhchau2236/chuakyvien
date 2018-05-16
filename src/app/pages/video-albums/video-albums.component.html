@@ -1,0 +1,14 @@
+<div id="page" class="index">
+  <app-header></app-header>
+  <section class="main-page page-video">
+    <div class="container-fluid">
+      <div class="row" *ngFor="let album of albums">
+        <p>
+          <a href="video-list?album={{album.AlbumUrl}}">{{album.AlbumName}}</a>
+        </p>
+      </div>
+    </div>
+  </section>
+  <app-footer></app-footer>
+  <a href="#" class="cd-top">Back To Top</a>
+</div>

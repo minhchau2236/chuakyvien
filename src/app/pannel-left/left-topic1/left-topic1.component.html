@@ -1,0 +1,23 @@
+<div class="new-block box_cate">
+    <h2 class="new-block-title">
+      <a href="topic?id={{topic.TopicUrl}}" title="">
+        <span>{{topic.TopicName}}</span>
+      </a>
+    </h2>
+
+    <div class="block-1" *ngFor="let article of filterFirstArticle()">
+      <a href="article?id={{article.ArticleUrl}}" title="{{article.ArticleTitle}}" class="thumb">
+        <img class="" src="resources/imgs/ArticleAvatar/{{article.ArticleId}}.jpg">
+      </a>
+      <h3>
+        <a href="article?id={{article.ArticleUrl}}" title="">{{article.ArticleTitle}}</a>
+      </h3>
+      <p>{{article.ArticleDescription}}</p>
+    </div>
+
+    <ul class="list-border" *ngFor="let article of articles">
+      <li *ngIf="article.RowNumber > 1">
+        <a href="article?id={{article.ArticleUrl}}">{{article.ArticleTitle}}</a>
+      </li>
+    </ul>
+  </div>

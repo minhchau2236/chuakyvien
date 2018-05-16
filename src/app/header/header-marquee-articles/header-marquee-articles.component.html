@@ -1,0 +1,6 @@
+<div class="ticker">
+  <label>Tin mới:&nbsp;</label>
+  <ul>
+    <li *ngFor="let item of articles"><a href="article?id={{item.ArticleUrl}}">{{item.ArticleTitle}}</a></li>
+  </ul>
+</div>

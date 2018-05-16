@@ -1,0 +1,60 @@
+<div id="page" class="index">
+  <app-header></app-header>
+  <section class="main-page">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="my-col-right col-xs-12 col-sm-9 col-md -9">
+          <div class="page-head">
+            <ul class="breadcrumb">
+              <li>
+                <a href="/">Trang chủ</a>
+              </li>
+              <li>
+                <a href="list-topic">Bản tin</a>
+              </li>
+              <li class="active">{{topic.TopicName}}</li>
+            </ul>
+          </div>
+          <div class="topic-content">
+            <div class="row">
+              <div class="my-col col-xs-4 col-sm-4 col-md-4" *ngFor="let item of articles">
+                <app-topic-display-item [article]="item"></app-topic-display-item>
+              </div>
+            </div>
+            <div class="pagination ">
+              <ul class="mod-pagination">
+                <li class="button">
+                  <a class="disabled" href="#0">Prev</a>
+                </li>
+                <li>
+                  <a class="current" href="#0">1</a>
+                </li>
+                <li>
+                  <a href="#0">2</a>
+                </li>
+                <li>
+                  <a href="#0">3</a>
+                </li>
+                <li>
+                  <a href="#0">4</a>
+                </li>
+                <li>
+                  <span>...</span>
+                </li>
+                <li>
+                  <a href="#0">20</a>
+                </li>
+                <li class="button">
+                  <a href="#0">Next</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <app-pannel-left></app-pannel-left>
+      </div>
+    </div>
+  </section>
+  <app-footer></app-footer>
+  <a href="#" class="cd-top">Back To Top</a>
+</div>

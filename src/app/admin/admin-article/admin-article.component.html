@@ -1,0 +1,65 @@
+<div class="container">
+  <app-admin-header></app-admin-header>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-xs-12" *ngFor="let topic of topics">
+          <a href="javascript:void(0)" class="list-group-item clearfix">
+            <div class="pull-left">
+              <p class="list-group-item-text">{{topic.TopicTitle}}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-xs-12">
+          <button class="btn btn-success" type="submit" data-toggle="modal" data-target="#myModal">Tạo mới</button>
+          <button class="btn btn-primary" type="submit" data-toggle="modal" data-target="#myModal">Chỉnh sửa</button>
+          <button class="btn btn-danger" type="submit" data-toggle="modal" data-target="#myModal">Xoá</button>
+        </div>
+      </div>
+      <hr/>
+      <table class="table table-bordered table-sm">
+        <thead>
+          <tr class="success">
+            <th>#</th>
+            <th>Tên bài viết</th>
+            <th>Tình trạng</th>
+            <th>Ngày tạo</th>
+            <th>Chọn</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let article of articles"  class="active" style="cursor: pointer">
+              <td>{{article.ArticleID}}</td>
+              <td>{{article.ArticleName}}</td>
+              <td>Đã xuất bản</td>
+              <td>11/05/2017</td>
+              <td><input type="checkbox"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+</div>

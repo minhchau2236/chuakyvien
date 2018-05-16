@@ -1,0 +1,58 @@
+<div id="page" class="index">
+  <app-header></app-header>
+  <section class="main-page page-photo">
+    <div class="container-fluid">
+      <div class="page-head">
+        <ul class="breadcrumb">
+          <li>
+            <a href="/">Trang chủ</a>
+          </li>
+          <li>
+            <a href="photo-album">Hình ảnh</a>
+          </li>
+          <li class="active">{{album.AlbumName}}</li>
+        </ul>
+      </div>
+      <div class="photo-detail mb-40">
+        <div class="article-content">
+          <h1>{{album.AlbumName}}</h1>
+          <p class="txt-description line-bottom mt-20 mb-30"></p>
+          <div class="lightbox-gallery mb-40">
+            <div class="row">
+              <div class="my-col col-sm-3" *ngFor="let media of medias">
+                <app-photo-item [media]="media" [albumId]="album.AlbumId"></app-photo-item>
+              </div>
+            </div>
+          </div>
+          <div class="sticky">
+            <div class="block-share ">
+              <p>Chia sẻ: </p>
+              <ul>
+                <li>
+                  <a class="facebook" target="_blank" href="http://www.facebook.com/sharer.php?u=http://chuakyvientrungnghia.com.vn/photo-display%26id={{album.AlbumUrl}}">
+                    <span class="fa fa-facebook"></span>
+                  </a>
+                </li>
+                <li>
+                  <a class="google-plus" target="_blank" href="https://plus.google.com/share?url=http://chuakyvientrungnghia.com.vn/photo-display%26id={{album.AlbumUrl}}">
+                    <span class="fa fa-google-plus"></span>
+                  </a>
+                </li>
+                <li>
+                  <a class="twitter" target="_blank" href="https://twitter.com/intent/tweet?source=sharethiscom&text={{album.AlbumName}}&url=http://chuakyvientrungnghia.com.vn/photo-display%26id={{album.AlbumUrl}}">
+                    <span class="fa fa-twitter"></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <p class="cat_time">
+            <span class="time">{{album.CreatedDate}}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <app-footer></app-footer>
+  <a href="#" class="cd-top">Back To Top</a>
+</div>

@@ -1,0 +1,34 @@
+<div id="page" class="index">
+  <app-header></app-header>
+  <section class="main-page page-photo">
+    <div class="container-fluid">
+      <div class="new-block box_cate pos-rlt">
+        <h2 class="new-block-title">
+          <a href="photo-album" title="">
+            <span>Hình ảnh</span>
+          </a>
+        </h2>
+
+        <a href="photo-album" class="redmore_cat" title="Xem thêm">{{albums?.length}} danh mục</a>
+
+        <div class="row pt-5">
+          <div class="my-col col-xs-3 col-sm-3 col-md-3" *ngFor="let album of albums">
+            <div class="block-2">
+              <figure>
+                <a href="photo-display?id={{album.AlbumUrl}}" title="{{album.AlbumName}}" class="thumb">
+                  <img class="" src="resources/photos/{{album.MediaAvatar}}.jpg" height="134px">
+                  <i class="photo-icon"></i>
+                </a>
+              </figure>
+              <h3>
+                <a href="photo-display?id={{album.AlbumUrl}}" title="">{{album.AlbumName}}</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <app-footer></app-footer>
+  <a href="#" class="cd-top">Back To Top</a>
+</div>

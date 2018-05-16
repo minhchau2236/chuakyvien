@@ -1,0 +1,96 @@
+<div id="page" class="index">
+  <app-header></app-header>
+  <div class="thap-linh-cot">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="my-col col-xs-12 col-sm-4 col-lg-3 pl-0">
+          <div class="sidebar width-common">
+            <h4 class="title-head-2 pl-10">danh mục tháp</h4>
+            <nav class="nav-accordion" role="navigation">
+              <ul class="nav__list">
+                <li *ngFor="let tower of towers; let i = first"  [class.active]="tower===thaplinhcot.Ma">
+                  <a href="javascript:void(0)" (click)="search(tower.Ma)">{{tower.Ten}}</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="my-col col-xs-12 col-sm-8 col-lg-9 ">
+          <div class="search-bar">
+            <div class="input-group">
+              <input type="text" (keyup)="onKeyUpOLinhCot($event);" name="search" class="form-control input-search" placeholder="Tìm thông tin ...">
+              <span class="input-group-btn">
+                <button class="btn btn-primary" type="button">
+                  <span class="fa fa-search"> </span>
+                </button>
+              </span>
+            </div>
+          </div>
+          <div class="search-notice text-center">
+            <a href="javascript:void(0)" (click)="checkEmptyCell()">
+              <strong class="text-uppercase">Xem ô chưa đăng ký.</strong>
+            </a>
+            <i class="text-warning">(Thông tin tìm kiếm phải có ít nhất 3 ký tự !)</i>
+          </div>
+          <div class="new-block pos-rlt">
+            <h2 class="new-block-title">
+              <a href="#" title="">
+                <span>{{thaplinhcot.Ten}}</span>
+              </a>
+            </h2>
+            <span class="redmore_cat">({{towerCells?.length}} ô)</span>
+          </div>
+          <div class="row my-row-8">
+            <div class="my-col col-xs-3 col-sm-3 col-md-3" *ngFor="let tCell of towerCells">
+              <div class="item-block">
+                <h4 *ngIf="tCell.OSo">{{tCell.OSo}}</h4>
+                <li *ngIf="thaplinhcot.Ma === 'ALL'">
+                    <span>{{tCell.TenThap}}</span>
+                  </li>
+                <ul class="ib-list">
+                  <li *ngIf="tCell.TenHuongLinh">
+                    <span class="ib-title">Hương Linh:</span>
+                    <span class="ib-name">{{tCell.TenHuongLinh}}</span>
+                  </li>
+                  <li *ngIf="tCell.PhapDanh">
+                    <span class="ib-title">Pháp danh:</span>
+                    <span>{{tCell.PhapDanh}}</span>
+                  </li>
+                  <li *ngIf="tCell.PhapDanh">
+                    <span class="ib-title">Pháp danh:</span>
+                    <span>{{tCell.PhapDanh}}</span>
+                  </li>
+                  <li *ngIf="tCell.NgaySinh">
+                    <span class="ib-title">Ngày sinh:</span>
+                    <span>{{tCell.NgaySinh}}</span>
+                  </li>
+                  <li *ngIf="tCell.NgayMat">
+                    <span class="ib-title">Ngày mất:</span>
+                    <span>{{tCell.NgayMat}}</span>
+                  </li>
+                  <li *ngIf="tCell.AmLich">
+                    <span class="ib-title">Âm lịch:</span>
+                    <span>{{tCell.AmLich}}</span>
+                  </li>
+                  <li *ngIf="tCell.PhapDanh">
+                    <span class="ib-title">Pháp danh:</span>
+                    <span>{{tCell.PhapDanh}}</span>
+                  </li>
+                  <li *ngIf="tCell.Tuoi">
+                    <span class="ib-title">Thọ:</span>
+                    <span>{{tCell.Tuoi}} tuổi</span>
+                  </li>
+                  <li *ngIf="tCell.ThongTinPhungLap">
+                    <span class="ib-title" *ngIf="tCell.TenHuongLinh">Phụng lập:</span>
+                    <span>{{tCell.ThongTinPhungLap}}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

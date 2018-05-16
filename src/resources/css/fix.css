@@ -1,0 +1,3 @@
+@media (min-width: 992px) {   
+      .thap-linh-cot .my-row-8 .my-col:nth-child(4n+1) {
+        clear: both; } }

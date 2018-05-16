@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="my-col col-xs-4 col-sm-4 col-md-4" *ngFor="let media of medias" style="height:245px">
+    <div class="block-2">
+      <figure>
+        <a href="video-display?id={{media.MediaUrl}}" title="{{media.MediaName}}" class="thumb">
+          <img class="" src="/resources/videos/{{media.MediaId}}.jpg" style="height:128px">
+          <i class="video-icon"></i>
+        </a>
+      </figure>
+      <h3>
+        <a href="video-display?id={{media.MediaUrl}}" title="{{media.MediaName}}">{{media.MediaName}}</a>
+      </h3>
+      <p class="meta-data">
+        <span class="count_view">{{media.CreatedDate}}</span>
+      </p>
+    </div>
+  </div>
+  <span class="count_view"><a href="video-list?album={{albumId}}">&nbsp;&nbsp;Xem thêm...</a></span>
+</div>

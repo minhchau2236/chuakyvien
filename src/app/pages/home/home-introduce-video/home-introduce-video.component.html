@@ -1,0 +1,55 @@
+<div class="new-block box_video">
+  <h2 class="new-block-title">
+    <a href="video-album" title="">
+      <span>Video</span>
+    </a>
+  </h2>
+
+  <div class="block-1">
+    <div class="embed-responsive embed-responsive-16by9">
+      <div class="embed-responsive-item">
+        <video controls id="videoPlayer" preload="none" controlsList="nodownload" poster="{{firstMediaUrl}}.jpg">
+          <source *ngIf="firstMediaUrl" src="{{firstMediaUrl}}.mp4" type="video/mp4" /> Browser not supported
+        </video>
+      </div>
+    </div>
+    <h3>
+      <a href="javascript:void(0);" title="">{{media.MediaName}}</a>
+    </h3>
+    <p>{{media.MediaDescription}}</p>
+  </div>
+
+  <div class="box-tab width-common">
+    <div class="tabs-scroll">
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <a data-toggle="tab" href="#tab-thich-hue-giao">Thích Huệ Giáo</a>
+        </li>
+        <li>
+          <a data-toggle="tab" href="#tab-thich-hue-hai">Thích Huệ Hải</a>
+        </li>
+        <li>
+          <a data-toggle="tab" href="#tab-chua-ky-vien-video">Chùa Kỳ Viên</a>
+        </li>
+        <li>
+          <a data-toggle="tab" href="#tab-mua-an-cu">Mùa An Cư</a>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+        <div id="tab-thich-hue-giao" class="tab-pane fade in active">
+          <app-home-introduce-video-list albumId="thich-hue-giao"></app-home-introduce-video-list>
+        </div>
+        <div id="tab-thich-hue-hai" class="tab-pane fade">
+          <app-home-introduce-video-list albumId="thich-hue-hai"></app-home-introduce-video-list>
+        </div>
+        <div id="tab-chua-ky-vien-video" class="tab-pane fade">
+          <app-home-introduce-video-list albumId="chua-ky-vien-video"></app-home-introduce-video-list>
+        </div>
+        <div id="tab-mua-an-cu" class="tab-pane fade">
+          <app-home-introduce-video-list albumId="mua-an-cu"></app-home-introduce-video-list>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

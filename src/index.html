@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chùa Kỳ Viên Trung Nghĩa</title>
+  <base href="/">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <link href="lib/normalize.css" rel="stylesheet" />
+  <link href="lib/animate.css" rel="stylesheet" />
+  <link href="lib/hover-min.css" rel="stylesheet" />
+  <link href="lib/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="lib/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="lib/smartmenus-1.0.1/addons/bootstrap/jquery.smartmenus.bootstrap.css" rel="stylesheet" />
+  <link href="lib/OwlCarousel2-2.3.4/assets/owl.carousel.min.css" rel="stylesheet" />
+  <link href="lib/OwlCarousel2-2.3.4/assets/owl.theme.default.min.css" rel="stylesheet" />
+  <link href="lib/jquery.mCustomScrollbar.min.css" rel="stylesheet" />
+  <link href="lib/jquery.scrolling-tabs/jquery.scrolling-tabs.min.css" rel="stylesheet">
+  <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+  <link href="resources/css/index.css" rel="stylesheet" />
+  <link href="resources/css/fix.css" rel="stylesheet" />
+</head>
+
+<body>
+  <app-root></app-root>
+  <script src="lib/jquery-3.2.0.min.js"></script>
+  <script src="lib/jquery.mCustomScrollbar.min.js"></script>
+  <script src="lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  <script src="lib/smartmenus-1.0.1/jquery.smartmenus.min.js"></script>
+  <script src="lib/smartmenus-1.0.1/addons/bootstrap/jquery.smartmenus.bootstrap.min.js"></script>
+  <script src="lib/OwlCarousel2-2.3.4/owl.carousel.min.js"></script>
+  <script src="lib/jquery.scrolling-tabs/jquery.scrolling-tabs.min.js"></script>
+  <script src="lib/jquery-ticker-master/jquery.ticker.min.js"></script>
+  <script src="lib/magnific-popup/jquery.magnific-popup.min.js"></script>
+  <script src="resources/js/script.js"></script>
+  <script src="resources/js/gototop.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.tabs-scroll .nav-tabs').scrollingTabs();
+      $('.ticker').ticker();
+
+      //Photo Display
+      $('.lightbox-gallery').magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        mainClass: 'mfp-fade',
+        gallery: { enabled: true }
+      });
+
+      //Video Display
+      if ($(".video-detail .article-content") !== null) {
+        $(".video-detail .article-content").mCustomScrollbar({
+          autoHideScrollbar: true,
+          scrollInertia: 1000,
+        });
+      }
+
+      if ($(".video-highlights.owl-carousel") !== null) {
+
+        $(".video-highlights.owl-carousel").owlCarousel({
+          loop: true,
+          margin: 20,
+          responsiveClass: true,
+          responsive: {
+            0: { items: 1, nav: true },
+            600: { items: 3, nav: true },
+            1000: { items: 4, nav: true, loop: false }
+          }
+        });
+      }
+
+      //Book Display
+      $(".book-list .owl-carousel").owlCarousel({
+        items: 6,
+        slideSpeed: 2000,
+        nav: true,
+        stagePadding: '40',
+        navText: [
+          "<i class='fa fa-caret-left'></i>",
+          "<img src='resources/imgs/next-arrow.png' alt='next'/>"
+        ],
+        autoplay: false,
+        dots: false,
+        loop: true,
+        responsiveRefreshRate: 200,
+        margin: 10,
+        responsive: {
+          0: { items: 1 },
+          340: { items: 2 },
+          400: { items: 2 },
+          500: { items: 3 },
+          650: { items: 4 },
+          800: { items: 5 },
+          1000: { items: 6 }
+        }
+      });
+
+      $("body").tooltip({
+        selector: "[data-toggle='tooltip']",
+        container: "body"
+      });
+    });
+
+  </script>
+</body>
+
+</html>

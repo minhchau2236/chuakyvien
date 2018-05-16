@@ -1,0 +1,195 @@
+<div id="page" class="index">
+  <app-header></app-header>
+  <section class="main-page page-video">
+    <div class="container-fluid">
+      <!-- chi tiết video -->
+      <div class="video-detail">
+        <div class="row">
+          <div class="my-col col-xs-7 col-sm-7 col-md-7">
+            <div class="embed-responsive embed-responsive-16by9">
+              <div class="embed-responsive-item">
+                <video controls id="videoPlayer" preload="none" controlsList="nodownload" poster="/resources/videos/{{media.MediaId}}.jpg">
+                  <source *ngIf="media.MediaId" src="/resources/videos/{{media.MediaId}}.mp4" type="video/mp4" /> Browser not supported
+                </video>
+              </div>
+            </div>
+          </div>
+          <div class="my-col col-xs-5 col-sm-5 col-md-5">
+            <div class="article-content">
+              <h1>{{media.MediaName}}</h1>
+              <p class="txt-description line-bottom mt-20" [innerHTML]="media.MediaDescription"></p>
+              <p class="a-tac-gia">{{media.MediaAuthor}}</p>
+
+              <div class="sticky">
+                <div class="block-share ">
+                  <p>Chia sẻ:&nbsp;</p>
+                  <ul>
+                    <li>
+                      <a class="facebook" target="_blank" href="http://www.facebook.com/sharer.php?u=http://chuakyvientrungnghia.com.vn/video-display%26id={{media.MediaUrl}}">
+                        <span class="fa fa-facebook"></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="google-plus" target="_blank" href="https://plus.google.com/share?url=http://chuakyvientrungnghia.com.vn/video-display%26id={{media.MediaUrl}}">
+                        <span class="fa fa-google-plus"></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="twitter" target="_blank" href="https://twitter.com/intent/tweet?source=sharethiscom&text={{media.MediaName}}&url=http://chuakyvientrungnghia.com.vn/video-display%26id={{media.MediaUrl}}">
+                        <span class="fa fa-twitter"></span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <p class="cat_time">
+                <span class="time">{{media.CreatedDate}}</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="new-block box_cate pos-rlt">
+        <h2 class="new-block-title">
+          <a href="#" title="">
+            <span>Xem thêm</span>
+          </a>
+        </h2>
+
+        <div class="video-highlights owl-carousel pt-5">
+          <div class="block-2">
+            <figure>
+              <a href="#" title="#" class="thumb">
+                <img class="" src="resources/imgs/cate/1.jpg">
+                <i class="video-icon"></i>
+              </a>
+            </figure>
+            <h3>
+              <a href="#" title="">Chương Trình Phái Đoàn Hoằng Pháp Âu Mỹ tại Hoa Kỳ và Canada 2018</a>
+            </h3>
+            <p class="meta-data">
+              <span class="duration_time">
+                <i class="fa fa-clock-o"></i>05:27</span>
+              <span class="count_view">85.9K</span>
+            </p>
+          </div>
+          <div class="block-2">
+            <figure>
+              <a href="#" title="#" class="thumb">
+                <img class="" src="resources/imgs/cate/1.jpg">
+                <i class="video-icon"></i>
+              </a>
+            </figure>
+            <h3>
+              <a href="#" title="">Chương Trình Phái Đoàn Hoằng Pháp Âu Mỹ tại Hoa Kỳ và Canada 2018</a>
+            </h3>
+            <p class="meta-data">
+              <span class="duration_time">
+                <i class="fa fa-clock-o"></i>05:27</span>
+              <span class="count_view">85.9K</span>
+            </p>
+          </div>
+          <div class="block-2">
+            <figure>
+              <a href="#" title="#" class="thumb">
+                <img class="" src="resources/imgs/cate/1.jpg">
+                <i class="video-icon"></i>
+              </a>
+            </figure>
+            <h3>
+              <a href="#" title="">Chương Trình Phái Đoàn Hoằng Pháp Âu Mỹ tại Hoa Kỳ và Canada 2018</a>
+            </h3>
+            <p class="meta-data">
+              <span class="duration_time">
+                <i class="fa fa-clock-o"></i>05:27</span>
+              <span class="count_view">85.9K</span>
+            </p>
+          </div>
+          <div class="block-2">
+            <figure>
+              <a href="#" title="#" class="thumb">
+                <img class="" src="resources/imgs/cate/1.jpg">
+                <i class="video-icon"></i>
+              </a>
+            </figure>
+            <h3>
+              <a href="#" title="">Chương Trình Phái Đoàn Hoằng Pháp Âu Mỹ tại Hoa Kỳ và Canada 2018</a>
+            </h3>
+            <p class="meta-data">
+              <span class="duration_time">
+                <i class="fa fa-clock-o"></i>05:27</span>
+              <span class="count_view">85.9K</span>
+            </p>
+          </div>
+          <div class="block-2">
+            <figure>
+              <a href="#" title="#" class="thumb">
+                <img class="" src="resources/imgs/cate/1.jpg">
+                <i class="video-icon"></i>
+              </a>
+            </figure>
+            <h3>
+              <a href="#" title="">Chương Trình Phái Đoàn Hoằng Pháp Âu Mỹ tại Hoa Kỳ và Canada 2018</a>
+            </h3>
+            <p class="meta-data">
+              <span class="duration_time">
+                <i class="fa fa-clock-o"></i>05:27</span>
+              <span class="count_view">85.9K</span>
+            </p>
+          </div>
+          <div class="block-2">
+            <figure>
+              <a href="#" title="#" class="thumb">
+                <img class="" src="resources/imgs/cate/1.jpg">
+                <i class="video-icon"></i>
+              </a>
+            </figure>
+            <h3>
+              <a href="#" title="">Chương Trình Phái Đoàn Hoằng Pháp Âu Mỹ tại Hoa Kỳ và Canada 2018</a>
+            </h3>
+            <p class="meta-data">
+              <span class="duration_time">
+                <i class="fa fa-clock-o"></i>05:27</span>
+              <span class="count_view">85.9K</span>
+            </p>
+          </div>
+          <div class="block-2">
+            <figure>
+              <a href="#" title="#" class="thumb">
+                <img class="" src="resources/imgs/cate/1.jpg">
+                <i class="video-icon"></i>
+              </a>
+            </figure>
+            <h3>
+              <a href="#" title="">Chương Trình Phái Đoàn Hoằng Pháp Âu Mỹ tại Hoa Kỳ và Canada 2018</a>
+            </h3>
+            <p class="meta-data">
+              <span class="duration_time">
+                <i class="fa fa-clock-o"></i>05:27</span>
+              <span class="count_view">85.9K</span>
+            </p>
+          </div>
+          <div class="block-2">
+            <figure>
+              <a href="#" title="#" class="thumb">
+                <img class="" src="resources/imgs/cate/1.jpg">
+                <i class="video-icon"></i>
+              </a>
+            </figure>
+            <h3>
+              <a href="#" title="">Chương Trình Phái Đoàn Hoằng Pháp Âu Mỹ tại Hoa Kỳ và Canada 2018</a>
+            </h3>
+            <p class="meta-data">
+              <span class="duration_time">
+                <i class="fa fa-clock-o"></i>05:27</span>
+              <span class="count_view">85.9K</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <app-footer></app-footer>
+  <a href="#" class="cd-top">Back To Top</a>
+</div>

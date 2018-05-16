@@ -1,0 +1,57 @@
+<div id="page" class="index">
+  <app-header></app-header>
+  <section class="main-page">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="my-col-right col-xs-12 col-sm-9 col-md -9">
+          <div class="page-head">
+            <ul class="breadcrumb">
+              <li>
+                <a href="/">Trang chủ</a>
+              </li>
+              <li>
+                <a href="topic">Bản tin</a>
+              </li>
+              <li>
+                <a href="topic?id=tin-dia-phuong">Tin địa phương</a>
+              </li>
+            </ul>
+          </div>
+          <div class="article-content">
+            <h1>{{article.ArticleTitle}}</h1>
+            <p style="color:#7e7e7e;font-size:14px">{{article.CreatedDate}}</p>
+            <p class="txt-description line-bottom mt-20" [innerHTML]="article.ArticleDescription"></p>
+            <div class="sticky">
+              <div class="block-share ">
+                <p>Chia sẻ:&nbsp;</p>
+                <ul>
+                  <li>
+                    <a class="facebook" target="_blank" href="http://www.facebook.com/sharer.php?u=http://chuakyvientrungnghia.com.vn/article%26id={{article.ArticleUrl}}">
+                      <span class="fa fa-facebook"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="google-plus" target="_blank" href="https://plus.google.com/share?url=http://chuakyvientrungnghia.com.vn/article%26id={{article.ArticleUrl}}">
+                      <span class="fa fa-google-plus"></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="twitter" target="_blank" href="https://twitter.com/intent/tweet?source=sharethiscom&text={{article.ArticleTitle}}&url=http://chuakyvientrungnghia.com.vn/article%26id={{article.ArticleUrl}}">
+                      <span class="fa fa-twitter"></span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="article-body mt-40" [innerHTML]="article.ArticleContent"></div>
+          </div>
+
+          <app-article-display-relative></app-article-display-relative>
+        </div>
+        <app-pannel-left></app-pannel-left>
+      </div>
+    </div>
+  </section>
+  <app-footer></app-footer>
+  <a href="#" class="cd-top">Back To Top</a>
+</div>
