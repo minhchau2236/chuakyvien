@@ -13,7 +13,8 @@ import { ResResult } from '../../types';
 })
 export class ArticleDisplayComponent implements OnInit {
 
-  article: Article = new Article("", "", "", "Đang tải", "", "", "");
+  public href: string = "";
+  public article: Article = new Article("", "", "", "Đang tải", "", "", "");
 
   constructor(private onlineService: OnlineService,
     private activatedRoute: ActivatedRoute) {
@@ -30,5 +31,6 @@ export class ArticleDisplayComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.href = window.location.href;
   }
 }
