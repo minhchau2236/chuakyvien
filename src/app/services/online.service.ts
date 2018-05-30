@@ -64,4 +64,22 @@ export class OnlineService {
     srvOLinhCotGetEmpty() {
         return this.http.get(`${this.serverUrl}api/OLinhCot/GetEmpty`);
     }
+
+    //BookCollection
+    srvBookCollectionGetAll() {
+        return this.http.get(`${this.serverUrl}api/BookCollection/GetAll`);
+    }
+
+    srvBookCollectionDetail(url: string) {
+        return this.http.get(`${this.serverUrl}api/BookCollection/Detail?url=${url}`);
+    }
+
+    //Book
+    srvBookSearch(collection: string, search: string) {
+        return this.http.post(`${this.serverUrl}api/Book/Search`, { "Collection": collection, "Search": search });
+    }
+
+    srvBookDetail(id: string) {
+        return this.http.get(`${this.serverUrl}api/Book/Detail?id=${id}`);
+    }
 }

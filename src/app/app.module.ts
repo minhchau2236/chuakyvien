@@ -34,8 +34,6 @@ import { HomeTopic1Component } from './pages/home/home-topic1/home-topic1.compon
 import { HomeTopic2Component } from './pages/home/home-topic2/home-topic2.component';
 import { LeftTopic1Component } from './pannel-left/left-topic1/left-topic1.component';
 import { TopicDisplayItemComponent } from './pages/topic-display/topic-display-item/topic-display-item.component';
-import { BookCollectionMenuComponent } from './pages/book-collections/book-collection-menu/book-collection-menu.component';
-import { BookCollectionItemComponent } from './pages/book-collections/book-collection-item/book-collection-item.component';
 import { ArticleDisplayRelativeComponent } from './pages/article-display/article-display-relative/article-display-relative.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminHeaderComponent } from './admin/admin-header/admin-header.component';
@@ -96,8 +94,6 @@ const routesConfig: Routes = [
     HomeTopic2Component,
     LeftTopic1Component,
     TopicDisplayItemComponent,
-    BookCollectionMenuComponent,
-    BookCollectionItemComponent,
     ArticleDisplayRelativeComponent,
     AdminComponent,
     AdminHeaderComponent,

@@ -2,87 +2,51 @@
   <div class="row">
     <div class="my-col col-xs-3 col-sm-3 col-md-3">
       <h4>
-        <a href="#" title="">Trang chính</a>
+        <a href="/" title="">Trang chính</a>
       </h4>
       <ul>
         <li>
-          <a href="#" title="">Chùa Kỳ Viên Trung Nghĩa</a>
+          <a href="article?id=nui-sinh-trung-chua-ky-vien-trung-nghia" title="">Chùa Kỳ Viên Trung Nghĩa</a>
         </li>
         <li>
-          <a href="#" title="">Chùa Hoà Tân</a>
+          <a href="article?id=hoa-tan-tu" title="">Chùa Hoà Tân</a>
         </li>
         <li>
-          <a href="#" title="">Chùa Bảo Sơn</a>
+          <a href="article?id=vai-net-ve-chua-bao-son" title="">Chùa Bảo Sơn</a>
         </li>
         <li>
-          <a href="#" title="">Tin tức</a>
+          <a href="list-topic" title="">Tin tức</a>
         </li>
       </ul>
     </div>
     <div class="my-col col-xs-3 col-sm-3 col-md-3">
       <h4>
-        <a href="#" title="">Hình Ảnh</a>
+        <a href="photo-album" title="">Hình Ảnh</a>
       </h4>
       <ul>
-        <li>
-          <a href="#" title="">Phật sự khắp nơi</a>
-        </li>
-        <li>
-          <a href="#" title="">Phật - Bồ tát</a>
-        </li>
-        <li>
-          <a href="#" title="">Danh lam Thắng cảnh</a>
-        </li>
-        <li>
-          <a href="#" title="">Thế giới muôn màu</a>
+          <li *ngFor="let palbum of filterPhotoAlbums()">
+          <a href="photo-display?id={{palbum.AlbumUrl}}" title="{{palbum.AlbumName}}">{{palbum.AlbumName}}</a>
         </li>
       </ul>
     </div>
     
     <div class="my-col col-xs-3 col-sm-3 col-md-3">
       <h4>
-        <a href="#" title="">Truyền hình</a>
+        <a href="video-album" title="">Truyền hình</a>
       </h4>
       <ul>
-        <li>
-          <a href="#" title="">Nghe tụng kinh</a>
-        </li>
-        <li>
-          <a href="#" title="">Nghe thuyết pháp</a>
-        </li>
-        <li>
-          <a href="#" title="">Lễ Phật Đản</a>
-        </li>
-        <li>
-          <a href="#" title="">Kênh An Viên</a>
+        <li *ngFor="let valbum of filterVideoAlbums()">
+            <a href="video-list?album={{valbum.AlbumUrl}}" title="{{valbum.AlbumName}}">{{valbum.AlbumName}}</a>
         </li>
       </ul>
     </div>
     <div class="my-col col-xs-3 col-sm-3 col-md-3">
       <h4>
-        <a href="#" title="">Kinh sách tổng hợp</a>
+        <a href="book-collection?col=ALL" title="">Kinh sách tổng hợp</a>
       </h4>
       <ul>
-        <li>
-          <a href="#" title="">Kinh</a>
-        </li>
-        <li>
-          <a href="#" title="">Luật</a>
-        </li>
-        <li>
-          <a href="#" title="">Luận</a>
-        </li>
-        <li>
-          <a href="#" title="">Văn hoá Phật Giáo</a>
-        </li>
-        <li>
-          <a href="#" title="">Tập san Tâm Thị</a>
-        </li>
-        <li>
-          <a href="#" title="">Tủ sách Tâm Thị</a>
-        </li>
-        <li>
-          <a href="#" title="">Văn học</a>
+        <li *ngFor="let collection of bookcollections">
+          <a href="book-collection?col={{collection.CollectionUrl}}" title="">{{collection.CollectionName}}</a>
         </li>
       </ul>
     </div>

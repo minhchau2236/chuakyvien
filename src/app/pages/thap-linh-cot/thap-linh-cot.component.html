@@ -50,31 +50,23 @@
                 <ul class="ib-list">
                   <li *ngIf="tCell.TenHuongLinh">
                     <span class="ib-title">Hương Linh:</span>
-                    <span class="ib-name">{{tCell.TenHuongLinh}}</span>
+                    <span class="ib-name" [innerHTML]="tCell.TenHuongLinh"></span>
                   </li>
                   <li *ngIf="tCell.PhapDanh">
                     <span class="ib-title">Pháp danh:</span>
-                    <span>{{tCell.PhapDanh}}</span>
-                  </li>
-                  <li *ngIf="tCell.PhapDanh">
-                    <span class="ib-title">Pháp danh:</span>
-                    <span>{{tCell.PhapDanh}}</span>
+                    <span [innerHTML]="tCell.PhapDanh"></span>
                   </li>
                   <li *ngIf="tCell.NgaySinh">
                     <span class="ib-title">Ngày sinh:</span>
-                    <span>{{tCell.NgaySinh}}</span>
+                    <span [innerHTML]="tCell.NgaySinh"></span>
                   </li>
                   <li *ngIf="tCell.NgayMat">
                     <span class="ib-title">Ngày mất:</span>
-                    <span>{{tCell.NgayMat}}</span>
+                    <span [innerHTML]="tCell.NgayMat"></span>
                   </li>
                   <li *ngIf="tCell.AmLich">
                     <span class="ib-title">Âm lịch:</span>
-                    <span>{{tCell.AmLich}}</span>
-                  </li>
-                  <li *ngIf="tCell.PhapDanh">
-                    <span class="ib-title">Pháp danh:</span>
-                    <span>{{tCell.PhapDanh}}</span>
+                    <span [innerHTML]="tCell.AmLich"></span>
                   </li>
                   <li *ngIf="tCell.Tuoi">
                     <span class="ib-title">Thọ:</span>
@@ -82,7 +74,7 @@
                   </li>
                   <li *ngIf="tCell.ThongTinPhungLap">
                     <span class="ib-title" *ngIf="tCell.TenHuongLinh">Phụng lập:</span>
-                    <span>{{tCell.ThongTinPhungLap}}</span>
+                    <span [innerHTML]="tCell.ThongTinPhungLap"></span>
                   </li>
                 </ul>
               </div>

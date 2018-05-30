@@ -73,57 +73,20 @@
             <li>
               <a href="video-album" title="">Truyền hình</a>
             </li>
-            <!--<li>
-              <a href="book-collection">
+            <li>
+              <a href="book-collection?col=ALL">
                 Kinh Sách Tổng Hợp
               </a>
               <ul class="dropdown-menu">
-                <li>
-                  <a href="book-collection?col=kinh">
+                <li *ngFor="let collection of bookcollections">
+                  <a href="book-collection?col={{collection.CollectionUrl}}">
                     <span class="fa fa-angle-double-right" aria-hidden="true"></span>
-                    Kinh
+                    {{collection.CollectionName}}
                     <span class="caret"></span>
-                  </a>
-                </li>
-                <li>
-                  <a href="book-collection?col=luat">
-                    <span class="fa fa-angle-double-right" aria-hidden="true"></span>
-                    Luật
-                  </a>
-                </li>
-                <li>
-                  <a href="book-collection?col=luan">
-                    <span class="fa fa-angle-double-right" aria-hidden="true"></span>
-                    Luận
-                    <span class="caret"></span>
-                  </a>
-                </li>
-                <li>
-                  <a href="book-collection?col=van-hoa-phat-giao">
-                    <span class="fa fa-angle-double-right" aria-hidden="true"></span>
-                    Văn hoá Phật giáo
-                  </a>
-                </li>
-                <li>
-                  <a href="book-collection?col=van-hoc">
-                    <span class="fa fa-angle-double-right" aria-hidden="true"></span>
-                    Văn học
-                  </a>
-                </li>
-                <li>
-                  <a href="book-collection?col=tap-san-tam-thi">
-                    <span class="fa fa-angle-double-right" aria-hidden="true"></span>
-                    Tập san Tâm Thị
-                  </a>
-                </li>
-                <li>
-                  <a href="book-collection?col=tu-sach-tam-thi">
-                    <span class="fa fa-angle-double-right" aria-hidden="true"></span>
-                    Tủ sách Tâm Thị
                   </a>
                 </li>
               </ul>
-            </li>-->
+            </li>
             <li>
               <a href="thap-linh-cot" title="">Lưu giữ tro cốt</a>
             </li>

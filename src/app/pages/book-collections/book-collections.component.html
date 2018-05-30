@@ -4,59 +4,40 @@
     <div class="container-fluid">
       <div class="row">
         <div class="my-col col-xs-12 col-sm-4 col-lg-3 pl-0">
-          <app-book-collection-menu></app-book-collection-menu>
+            <div class="sidebar width-common">
+                <h4 class="title-head-2 pl-10">Tủ sách</h4>
+                <nav class="nav-accordion" role="navigation">
+                <ul class="nav__list">
+                  <li *ngFor="let tusach of collections">
+                    <a href="javascript:void(0);" (click)="search(tusach.CollectionUrl)">{{tusach.CollectionName}}</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
         </div>
 
         <div class="my-col col-xs-12 col-sm-8 col-lg-9 ">
-
           <div class="new-block pos-rlt">
             <h2 class="new-block-title">
-              <a href="#" title="">
-                <span>Văn hoá Phật giáo</span>
+              <a href="book-collection?col={{ collection.CollectionUrl }}" title="{{collection.CollectionName}}">
+                <span>{{collection.CollectionName}}</span>
               </a>
             </h2>
-            <span class="redmore_cat">(1000 sách)</span>
+            <span class="redmore_cat">({{books?.length}} sách)</span>
           </div>
-
           <div class="row">
-            <app-book-collection-item></app-book-collection-item>
-            <app-book-collection-item></app-book-collection-item>
-            <app-book-collection-item></app-book-collection-item>
-            <app-book-collection-item></app-book-collection-item>
-            <app-book-collection-item></app-book-collection-item>
-            <app-book-collection-item></app-book-collection-item>
-            <app-book-collection-item></app-book-collection-item>
-            <app-book-collection-item></app-book-collection-item>
+            <div class="my-col col-xs-3 col-sm-3 col-md-3" *ngFor="let book of books" style="height:350px">
+              <div class="s-product">
+                <div class="s-product-img">
+                  <img class="img-responsive" src="resources/imgs/BookCover/{{book.BookId}}.jpg" alt="">
+                </div>
+                <h6>
+                  <a href="book-detail?id={{book.BookUrl}}">{{book.Title}}</a>
+                </h6>
+                <p class="tac-gia">{{book.Author}}</p>
+              </div>
+            </div>
           </div>
-          <div class="pagination border-bottom-light">
-            <ul class="mod-pagination margin-bot30">
-              <li class="button">
-                <a class="disabled" href="#0">Prev</a>
-              </li>
-              <li>
-                <a class="current" href="#0">1</a>
-              </li>
-              <li>
-                <a href="#0">2</a>
-              </li>
-              <li>
-                <a href="#0">3</a>
-              </li>
-              <li>
-                <a href="#0">4</a>
-              </li>
-              <li>
-                <span>...</span>
-              </li>
-              <li>
-                <a href="#0">20</a>
-              </li>
-              <li class="button">
-                <a href="#0">Next</a>
-              </li>
-            </ul>
-          </div>
-          <!-- /.pagination -->
         </div>
       </div>
     </div>
