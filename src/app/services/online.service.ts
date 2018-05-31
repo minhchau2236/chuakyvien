@@ -16,6 +16,10 @@ export class OnlineService {
         return this.http.get(`${this.serverUrl}api/Article/GetByTopic?topic=${topic}&index=${index}&count=${count}`);
     }
 
+    srvArticleGetRelated(topic: string, index: number, count: number) {
+        return this.http.get(`${this.serverUrl}api/Article/GetRelated?url=${topic}&index=${index}&count=${count}`);
+    }
+
     //Topic
     srvTopicGetAll() {
         return this.http.get(`${this.serverUrl}api/Topic/GetAll`);

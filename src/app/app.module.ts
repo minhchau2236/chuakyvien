@@ -44,6 +44,7 @@ import { HomeIntroduceVideoListComponent } from './pages/home/home-introduce-vid
 import { VideoListComponent } from './pages/video-list/video-list.component';
 import { ThapLinhCotComponent } from './pages/thap-linh-cot/thap-linh-cot.component';
 import { ThapLinhCot } from './models/thaplinhcot.model';
+import { PaginationComponent } from './pagination/pagination.component';
 
 const routesConfig: Routes = [
   { path: '', component: HomeComponent },
@@ -102,7 +103,8 @@ const routesConfig: Routes = [
     ListTopicComponent,
     HomeIntroduceVideoListComponent,
     VideoListComponent,
-    ThapLinhCotComponent
+    ThapLinhCotComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,

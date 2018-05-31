@@ -1,0 +1,13 @@
+<div class="pagination ">
+  <ul class="mod-pagination">
+    <li class="button">
+      <a [class.disabled]="current == 1" href="javascript:;" (click)="setPage(current-1, itemsPerPage)">Prev</a>
+    </li>
+    <li *ngFor="let page of pages;">
+      <a [class.current]="page == current" href="javascript:;" (click)="setPage(page, itemsPerPage)">{{ page }}</a>
+    </li>
+    <li class="button">
+      <a [class.disabled]="current == maxPages" href="javascript:;" (click)="setPage(current+1 ,itemsPerPage)">Next</a>
+    </li>
+  </ul>
+</div>
