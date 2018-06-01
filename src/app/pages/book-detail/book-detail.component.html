@@ -146,74 +146,7 @@
               <!-- /.book-list -->
             </div>
             <div id="book-comment" class="tab-pane fade">
-              <div class="comments">
-                <div class="comment-item">
-                  <div class="top">
-                    <span class="user-name">thanhbinhnguyen</span>
-                    <span class="pull-right">10 tháng trước</span>
-                  </div>
-                  <div class="item-content">
-                    Bình luận 1
-                  </div>
-                  <div class="bottom">
-                    <a class="btn-comment like" href="javascript:void()">
-                      <span class="">8</span>
-                    </a>
-                    <a class="btn-comment dis-like" href="javascript:void()">
-                      <span class="">1</span>
-                    </a>
-                  </div>
-                </div>
-                <!-- /.comment-item -->
-                <div class="comment-item">
-                  <div class="top">
-                    <span class="user-name">thanhbinhnguyen</span>
-                    <span class="pull-right">10 tháng trước</span>
-                  </div>
-                  <div class="item-content">
-                    Bình luận 2
-                  </div>
-                  <div class="bottom">
-                    <a class="btn-comment like" href="javascript:void()">
-                      <span class="">8</span>
-                    </a>
-                    <a class="btn-comment dis-like" href="javascript:void()">
-                      <span class="">1</span>
-                    </a>
-                  </div>
-                </div>
-                <!-- /.comment-item -->
-              </div>
-              <!-- /.comments -->
-              <div class="comment-form">
-                <div class="form-input">
-                  <label>Tên thành viên:
-                    <span class="user-name">chuakyvientrungnghia</span>
-                  </label>
-                </div>
-                <div class="form-input">
-                  <label>Nội dung
-                    <span class="red">*</span>
-                  </label>
-                  <textarea class="form-control noi-dung" cols="30" rows="5"></textarea>
-                </div>
-                <div class="form-input">
-                  <label>Mã kiểm tra:</label>
-                  <img src="resources/imgs/capcha.png" />
-                  <a href="#">Tải lại hình</a>
-                </div>
-                <div class="form-input">
-                  <label>Nhập mã kiểm tra:</label>
-                  <input type="text">
-                  <p class="notice">( Nhập các ký tự ở hình trên không phân biệt chữ HOA chữ thường )</p>
-                </div>
-
-                <div class="btn-300">
-                  <div class="form-input">
-                    <input type="submit" value="Gửi bình luận" />
-                  </div>
-                </div>
-              </div>
+              <div class="fb-comments" [attr.data-href]="href" data-numposts="5" data-width="100%"></div>
             </div>
           </div>
         </div>
@@ -221,7 +154,7 @@
       </div>
       <!-- /.bottom-detail -->
     </div>
-    <div class="fb-comments" [attr.data-href]="href" data-numposts="5" data-width="100%"></div>
+    
   </div>
   <app-footer></app-footer>
 </div>
