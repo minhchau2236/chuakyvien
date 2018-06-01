@@ -51,6 +51,10 @@ export class OnlineService {
         return this.http.get(`${this.serverUrl}api/Media/New?type=${type}`);
     }
 
+    srvMediaGetRelated(url: string) {
+        return this.http.get(`${this.serverUrl}api/Media/GetRelated?url=${url}`);
+    }
+
     //ThapLinhCot
     srvThapLinhCotGetAll() {
         return this.http.get(`${this.serverUrl}api/ThapLinhCot/GetAll`);

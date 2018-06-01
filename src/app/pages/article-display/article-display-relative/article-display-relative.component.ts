@@ -19,13 +19,11 @@ export class ArticleDisplayRelativeComponent implements OnInit {
     private activatedRoute: ActivatedRoute) {
     this.activatedRoute.queryParams.subscribe(params => {
       this.articleId = params['id'];
-
+      this.getRelatedArticle();
     });
   }
 
-  ngOnInit() {
-    this.getRelatedArticle();
-  }
+  ngOnInit() { }
 
   pageChanged(event) {
     this.itemsPerPage = event.itemsPerPage;
@@ -44,7 +42,6 @@ export class ArticleDisplayRelativeComponent implements OnInit {
             let totalArticles = this.articles[0].TotalArticles;
             this.totalPages = Math.floor((totalArticles / this.itemsPerPage) + (totalArticles % this.itemsPerPage == 0 ? 0 : 1));
           }
-          console.log(this.totalPages);
         },
         err => console.log(err)
       )

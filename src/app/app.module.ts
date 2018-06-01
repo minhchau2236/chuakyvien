@@ -45,6 +45,7 @@ import { VideoListComponent } from './pages/video-list/video-list.component';
 import { ThapLinhCotComponent } from './pages/thap-linh-cot/thap-linh-cot.component';
 import { ThapLinhCot } from './models/thaplinhcot.model';
 import { PaginationComponent } from './pagination/pagination.component';
+import { QuestionAnswerComponent } from './pages/question-answer/question-answer.component';
 
 const routesConfig: Routes = [
   { path: '', component: HomeComponent },
@@ -59,6 +60,7 @@ const routesConfig: Routes = [
   { path: 'book-collection', component: BookCollectionsComponent },
   { path: 'book-detail', component: BookDetailComponent },
   { path: 'thap-linh-cot', component: ThapLinhCotComponent },
+  { path: 'qa', component: QuestionAnswerComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'admin/article', component: AdminArticleComponent },
@@ -104,7 +106,8 @@ const routesConfig: Routes = [
     HomeIntroduceVideoListComponent,
     VideoListComponent,
     ThapLinhCotComponent,
-    PaginationComponent
+    PaginationComponent,
+    QuestionAnswerComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,7 @@
             <span>{{albumInfo.AlbumName}}</span>
           </a>
         </h2>
+        <a href="javascript:void(0);" class="redmore_cat" title="">({{totalItems}} video)</a>
         <div class="row pt-5">
           <div class="my-col col-xs-3 col-sm-3 col-md-3" style="height:250px" *ngFor="let media of medias">
             <div class="block-2">
@@ -26,6 +27,11 @@
             </div>
           </div>
         </div>
+        <app-pagination [maxPages]="totalPages" 
+          [current]="currentPage" 
+          [itemsPerPage]="itemsPerPage" 
+          (changePage)="pageChanged($event)">
+        </app-pagination>
       </div>
     </div>
   </section>

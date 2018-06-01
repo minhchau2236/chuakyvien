@@ -49,6 +49,7 @@
           </div>
         </div>
       </div>
+      <div class="fb-comments" [attr.data-href]="href" data-numposts="5" data-width="100%"></div>
 
       <div class="new-block box_cate pos-rlt">
         <h2 class="new-block-title">
@@ -58,132 +59,18 @@
         </h2>
 
         <div class="video-highlights owl-carousel pt-5">
-          <div class="block-2">
+          <div class="block-2" *ngFor="let rmedia of relatedMedias" style="height:250px">
             <figure>
-              <a href="#" title="#" class="thumb">
-                <img class="" src="resources/imgs/cate/1.jpg">
+              <a href="video-display?id={{rmedia.MediaUrl}}" title="{{rmedia.MediaName}}" class="thumb">
+                <img class="" src="/resources/videos/{{rmedia.MediaId}}.jpg" style="height:135px">
                 <i class="video-icon"></i>
               </a>
             </figure>
-            <h3>
-              <a href="#" title="">Chương Trình Phái Đoàn Hoằng Pháp Âu Mỹ tại Hoa Kỳ và Canada 2018</a>
+            <h3 style="height:60px">
+              <a href="video-display?id={{rmedia.MediaUrl}}" title="{{rmedia.MediaName}}">{{rmedia.MediaName}}</a>
             </h3>
             <p class="meta-data">
-              <span class="duration_time">
-                <i class="fa fa-clock-o"></i>05:27</span>
-              <span class="count_view">85.9K</span>
-            </p>
-          </div>
-          <div class="block-2">
-            <figure>
-              <a href="#" title="#" class="thumb">
-                <img class="" src="resources/imgs/cate/1.jpg">
-                <i class="video-icon"></i>
-              </a>
-            </figure>
-            <h3>
-              <a href="#" title="">Chương Trình Phái Đoàn Hoằng Pháp Âu Mỹ tại Hoa Kỳ và Canada 2018</a>
-            </h3>
-            <p class="meta-data">
-              <span class="duration_time">
-                <i class="fa fa-clock-o"></i>05:27</span>
-              <span class="count_view">85.9K</span>
-            </p>
-          </div>
-          <div class="block-2">
-            <figure>
-              <a href="#" title="#" class="thumb">
-                <img class="" src="resources/imgs/cate/1.jpg">
-                <i class="video-icon"></i>
-              </a>
-            </figure>
-            <h3>
-              <a href="#" title="">Chương Trình Phái Đoàn Hoằng Pháp Âu Mỹ tại Hoa Kỳ và Canada 2018</a>
-            </h3>
-            <p class="meta-data">
-              <span class="duration_time">
-                <i class="fa fa-clock-o"></i>05:27</span>
-              <span class="count_view">85.9K</span>
-            </p>
-          </div>
-          <div class="block-2">
-            <figure>
-              <a href="#" title="#" class="thumb">
-                <img class="" src="resources/imgs/cate/1.jpg">
-                <i class="video-icon"></i>
-              </a>
-            </figure>
-            <h3>
-              <a href="#" title="">Chương Trình Phái Đoàn Hoằng Pháp Âu Mỹ tại Hoa Kỳ và Canada 2018</a>
-            </h3>
-            <p class="meta-data">
-              <span class="duration_time">
-                <i class="fa fa-clock-o"></i>05:27</span>
-              <span class="count_view">85.9K</span>
-            </p>
-          </div>
-          <div class="block-2">
-            <figure>
-              <a href="#" title="#" class="thumb">
-                <img class="" src="resources/imgs/cate/1.jpg">
-                <i class="video-icon"></i>
-              </a>
-            </figure>
-            <h3>
-              <a href="#" title="">Chương Trình Phái Đoàn Hoằng Pháp Âu Mỹ tại Hoa Kỳ và Canada 2018</a>
-            </h3>
-            <p class="meta-data">
-              <span class="duration_time">
-                <i class="fa fa-clock-o"></i>05:27</span>
-              <span class="count_view">85.9K</span>
-            </p>
-          </div>
-          <div class="block-2">
-            <figure>
-              <a href="#" title="#" class="thumb">
-                <img class="" src="resources/imgs/cate/1.jpg">
-                <i class="video-icon"></i>
-              </a>
-            </figure>
-            <h3>
-              <a href="#" title="">Chương Trình Phái Đoàn Hoằng Pháp Âu Mỹ tại Hoa Kỳ và Canada 2018</a>
-            </h3>
-            <p class="meta-data">
-              <span class="duration_time">
-                <i class="fa fa-clock-o"></i>05:27</span>
-              <span class="count_view">85.9K</span>
-            </p>
-          </div>
-          <div class="block-2">
-            <figure>
-              <a href="#" title="#" class="thumb">
-                <img class="" src="resources/imgs/cate/1.jpg">
-                <i class="video-icon"></i>
-              </a>
-            </figure>
-            <h3>
-              <a href="#" title="">Chương Trình Phái Đoàn Hoằng Pháp Âu Mỹ tại Hoa Kỳ và Canada 2018</a>
-            </h3>
-            <p class="meta-data">
-              <span class="duration_time">
-                <i class="fa fa-clock-o"></i>05:27</span>
-              <span class="count_view">85.9K</span>
-            </p>
-          </div>
-          <div class="block-2">
-            <figure>
-              <a href="#" title="#" class="thumb">
-                <img class="" src="resources/imgs/cate/1.jpg">
-                <i class="video-icon"></i>
-              </a>
-            </figure>
-            <h3>
-              <a href="#" title="">Chương Trình Phái Đoàn Hoằng Pháp Âu Mỹ tại Hoa Kỳ và Canada 2018</a>
-            </h3>
-            <p class="meta-data">
-              <span class="duration_time">
-                <i class="fa fa-clock-o"></i>05:27</span>
-              <span class="count_view">85.9K</span>
+              <span class="count_view">{{rmedia.CreatedDate}}</span>
             </p>
           </div>
         </div>

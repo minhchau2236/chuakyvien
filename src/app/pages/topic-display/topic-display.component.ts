@@ -12,30 +12,50 @@ import { Topic } from '../../models/topic.model';
 export class TopicDisplayComponent implements OnInit {
   topic: Topic = new Topic("", "", "Đang lấy thông tin", "");
   articles: Article[] = [];
-  
+  topicId: string = "";
+
+  itemsPerPage: number = 12;
+  currentPage: number = 1;
+  totalPages: number;
+
   constructor(private onlineService: OnlineService,
     private activatedRoute: ActivatedRoute) {
-      this.activatedRoute.queryParams.subscribe(params => {
-        let topicId = params['id'];
-        this.onlineService.srvTopicDetail(topicId)
-          .subscribe(
-            res => {
-              this.topic = JSON.parse(res['_body']);
-            },
-            err => console.log(err)
-          )
-        this.onlineService.srvArticleBelongTopic(topicId, 0, 12)
-          .subscribe(
-            res => {
-              this.articles = JSON.parse(res['_body']);
-            },
-            err => console.log(err)
-          )
-      });
-   }
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.topicId = params['id'];
+      this.onlineService.srvTopicDetail(this.topicId)
+        .subscribe(
+          res => {
+            this.topic = JSON.parse(res['_body']);
+          },
+          err => console.log(err)
+        )
+      this.getArticles();
+    });
+  }
 
   ngOnInit() {
     console.log(this.articles);
   }
 
+  pageChanged(event) {
+    this.itemsPerPage = event.itemsPerPage;
+    this.currentPage = event.page;
+    this.getArticles();
+  }
+
+  getArticles() {
+    this.articles = [];
+    let index = (this.currentPage - 1) * this.itemsPerPage;
+    this.onlineService.srvArticleBelongTopic(this.topicId, index, this.itemsPerPage)
+      .subscribe(
+        res => {
+          this.articles = JSON.parse(res['_body']);
+          if (this.articles.length > 0) {
+            let totalArticles = this.articles[0].TotalArticles;
+            this.totalPages = Math.floor((totalArticles / this.itemsPerPage) + (totalArticles % this.itemsPerPage == 0 ? 0 : 1));
+          }
+        },
+        err => console.log(err)
+      )
+  }
 }

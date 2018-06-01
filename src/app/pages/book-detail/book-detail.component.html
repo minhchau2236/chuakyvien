@@ -1,40 +1,45 @@
 <div id="page" class="index">
   <app-header></app-header>
   <div class="page-head">
-			<div class="container-fluid">
-				<ul class="breadcrumb">
-					<li>
-						<a href="index.html">Trang chủ</a>
-          </li>
-          <li>
-              <a href="index.html">Kinh sách tổng hợp</a>
-            </li>
-					<li class="active">Chuyển hóa khổ đau - Quảng Trí</li>
-				</ul>
-			</div>
-		</div>
+    <div class="container-fluid">
+      <ul class="breadcrumb">
+        <li>
+          <a href="/">Trang chủ</a>
+        </li>
+        <li>
+          <a href="book-collection?col={{book.CollectionUrl}}">{{book.CollectionName}}</a>
+        </li>
+        <li class="active">{{book.Title}}</li>
+      </ul>
+    </div>
+  </div>
   <div class="book-detail">
     <div class="container-fluid">
       <div class="top-detail width-common">
         <div class="wrapper  width-common">
           <div class="thumb">
-            <img class="img-responsive" src="resources/imgs/img-3883-1373352355.jpg" alt="Chuyển hóa khổ đau - Quảng Trí" />
+            <img class="img-responsive" src="resources/imgs/BookCover/{{book.BookId}}.jpg" alt="{{book.Title}}" />
+
           </div>
           <div class="content">
             <div class="width-common">
-              <h1 class="title-book">Chuyển hóa khổ đau - Quảng Trí</h1>
+              <h1 class="title-book">{{book.Title}}</h1>
               <a class="btn-like" href="#" data-toggle="tooltip" data-placement="top" data-original-title="Yêu thích">
                 <i class="fa fa-heart" aria-hidden="true"></i>
               </a>
-              <div class="author">
+              <div class="author" *ngIf="book.Author">
                 <span class="text-uppercase padding-right-15">tác giả:</span>
-                <span class="name">Quảng Trí</span>
+                <span class="name">{{book.Author}}</span>
               </div>
               <div class="type-book">
-                <div class="text-uppercase padding-right-15">thể loại:</div>
+                <div class="text-uppercase padding-right-15">tủ sách:</div>
                 <div class="type-list">
-                  <a href="book-collection?col=van-hoa-phat-giao">Văn hoá Phật giáo,</a>
-                  <a href="book-collection?col=luan">Luận</a>
+                  <a href="book-collection?col={{book.CollectionUrl}}">{{book.CollectionName}}</a>
+                </div>
+              </div>
+              <div class="type-book">
+                <div class="type-list">
+                  <a href="resources/books/{{book.BookUrl}}.pdf" targer="_blank">Tải về</a>
                 </div>
               </div>
             </div>
@@ -58,18 +63,10 @@
               <a data-toggle="tab" href="#book-comment">
                 <i class="fa fa-stack-exchange"></i>Bình luận</a>
             </li>
-            <li>
-              <a data-toggle="tab" href="#book-review">
-                <i class="fa fa-eye"></i>Xem trước</a>
-            </li>
           </ul>
 
           <div class="tab-content">
-            <div id="intro" class="tab-pane fade in active">
-              <p>Việc phối hợp giữa tâm lý học hiện đại và giáo lý đạo Phật trong nghiên cứu và thực hành của ngành Tâm lý học là một xu hướng ngày càng phổ biến. Cũng trong xu hướng đó, tập sách <b><i>Chuyển hóa khổ đau: Ứng dụng lời Phật dạy để chữa trị những vấn đề tâm lý đã ra đời..</i></b></p>
-              <br/>
-              <p>Tập sách này là tập hợp những bài viết về vấn đề tâm lý. Có những vấn đề thuộc về tâm bệnh của cá nhân, có những vấn đề liên quan đến các mối quan hệ xã hội. Trong mỗi vấn đề, người viết đã phân tích dưới quan điểm của tâm lý học hiện đại cũng như dưới nhãn quan của Phật giáo, giúp bạn đọc hiểu được khái niệm của vấn đề, chỉ ra nguyên nhân của nó, những biểu hiện hoặc triệu chứng, và điều quan trọng hơn nữa là đưa ra những liệu pháp để chữa trị, để chuyển hóa những tâm bệnh, những bất ổn trong các mối quan hệ xã hội ấy.</p>
-            </div>
+            <div id="intro" class="tab-pane fade in active" [innerHTML]="book.Sumarize"></div>
             <div id="book-addition" class="tab-pane fade">
               <div class="book-list">
                 <div class="book-block owl-carousel owl-theme">
@@ -218,15 +215,13 @@
                 </div>
               </div>
             </div>
-            <div id="book-review" class="tab-pane fade">
-              <object class="file-review" width="100%" data="resources/imgs/book-review/chuyen-hoa-kho-dau-fd13483be0.pdf"></object>
-            </div>
           </div>
         </div>
         <!-- /.tabs-scroll -->
       </div>
       <!-- /.bottom-detail -->
     </div>
+    <div class="fb-comments" [attr.data-href]="href" data-numposts="5" data-width="100%"></div>
   </div>
   <app-footer></app-footer>
 </div>

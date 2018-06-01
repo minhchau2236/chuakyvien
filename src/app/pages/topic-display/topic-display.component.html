@@ -21,34 +21,11 @@
                 <app-topic-display-item [article]="item"></app-topic-display-item>
               </div>
             </div>
-            <div class="pagination ">
-              <ul class="mod-pagination">
-                <li class="button">
-                  <a class="disabled" href="#0">Prev</a>
-                </li>
-                <li>
-                  <a class="current" href="#0">1</a>
-                </li>
-                <li>
-                  <a href="#0">2</a>
-                </li>
-                <li>
-                  <a href="#0">3</a>
-                </li>
-                <li>
-                  <a href="#0">4</a>
-                </li>
-                <li>
-                  <span>...</span>
-                </li>
-                <li>
-                  <a href="#0">20</a>
-                </li>
-                <li class="button">
-                  <a href="#0">Next</a>
-                </li>
-              </ul>
-            </div>
+            <app-pagination [maxPages]="totalPages" 
+              [current]="currentPage" 
+              [itemsPerPage]="itemsPerPage" 
+              (changePage)="pageChanged($event)">
+            </app-pagination>
           </div>
         </div>
         <app-pannel-left></app-pannel-left>

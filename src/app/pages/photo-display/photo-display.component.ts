@@ -9,7 +9,7 @@ import { OnlineService } from '../../services/online.service';
   styleUrls: []
 })
 export class PhotoDisplayComponent implements OnInit {
-
+  public href: string = "";
   album = new MediaAlbum("", "", "Đang tải", "");
 
   medias: Media[] = [];
@@ -38,6 +38,7 @@ export class PhotoDisplayComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.href = window.location.href;
   }
 
 }

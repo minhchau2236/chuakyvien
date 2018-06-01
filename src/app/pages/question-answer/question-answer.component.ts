@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
+  selector: 'app-question-answer',
+  templateUrl: './question-answer.component.html',
   styleUrls: []
 })
-export class HomeComponent implements OnInit {
+export class QuestionAnswerComponent implements OnInit {
   public href: string = "";
   constructor() { }
 

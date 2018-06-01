@@ -9,23 +9,39 @@ import { OnlineService } from '../../services/online.service';
   styleUrls: []
 })
 export class VideoDisplayComponent implements OnInit {
-  media:Media = new Media("", "", "", "", 0);
+  public href: string = "";
+  media: Media = new Media("", "", "", "", 0);
+  relatedMedias: Media[] = [];
+  mediaUrl: string = "";
 
   constructor(private onlineService: OnlineService,
     private activatedRoute: ActivatedRoute) {
-      this.activatedRoute.queryParams.subscribe(params => {
-        let id = params['id'];
-        this.onlineService.srvMediaDetail(id)
-          .subscribe(
-            res => {
-              this.media = JSON.parse(res['_body']);
-            },
-            err => console.log(err)
-          )
-      });
-   }
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.mediaUrl = params['id'];
+      this.onlineService.srvMediaDetail(this.mediaUrl)
+        .subscribe(
+          res => {
+            this.media = JSON.parse(res['_body']);
+          },
+          err => console.log(err)
+        )
+      this.getRelatedMedias();
+    });
+  }
 
   ngOnInit() {
+    this.href = window.location.href;
+  }
+
+  getRelatedMedias() {
+    this.relatedMedias = [];
+    this.onlineService.srvMediaGetRelated(this.mediaUrl)
+      .subscribe(
+        res => {
+          this.relatedMedias = JSON.parse(res['_body']);
+        },
+        err => console.log(err)
+      )
   }
 
 }
