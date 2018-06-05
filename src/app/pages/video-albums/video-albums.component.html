@@ -2,10 +2,22 @@
   <app-header></app-header>
   <section class="main-page page-video">
     <div class="container-fluid">
-      <div class="row" *ngFor="let album of albums">
-        <p>
-          <a href="video-list?album={{album.AlbumUrl}}">{{album.AlbumName}}</a>
-        </p>
+      <div class="row">
+        <div class="my-col-right col-xs-12 col-sm-12 col-md-12">
+          <div class="page-head">
+            <ul class="breadcrumb">
+              <li>
+                <a href="/">Trang chủ</a>
+              </li>
+              <li class="active">Truyền hình</li>
+            </ul>
+          </div>
+          <ol class="list-number-rectangle">
+            <li *ngFor="let album of albums">
+              <a href="video-list?album={{album.AlbumUrl}}">{{album.AlbumName}}</a>
+            </li>
+          </ol>
+        </div>
       </div>
     </div>
   </section>

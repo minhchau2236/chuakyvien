@@ -12,13 +12,9 @@
               <li class="active">Bản tin</li>
             </ul>
           </div>
-          <div class="topic-content">
-            <div class="row" *ngFor="let item of topics">
-              <p>
-                <a href="topic?id={{item.TopicUrl}}">{{item.TopicName}}</a>
-              </p>
-            </div>
-          </div>
+          <ol class="list-number-rectangle">
+              <li *ngFor="let item of topics"><a href="topic?id={{item.TopicUrl}}">{{item.TopicName}}</a></li>
+          </ol>
         </div>
         <app-pannel-left></app-pannel-left>
       </div>
